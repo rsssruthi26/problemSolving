@@ -63,20 +63,30 @@ public class LinkedList {
         head = curr.next;
     }
     public void deleteLastNode() {
-        
+
         Node curr = head;
         while(curr.next.next!= null) {
             curr = curr.next;
         }
         curr.next = null;
 
-
+    }
+    public int search(int data) {
+        Node curr = head;
+        int count = 0;
+        while(curr.next != null) {
+            count++;
+            if(curr.data == data) {
+                return count;
+            }
+            curr = curr.next;
+        }return -1;
     }
 
     //print the list
     public void print() {
         Node temp = head;
-        while(temp != null) {
+        while(temp.next != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
@@ -100,6 +110,8 @@ public class LinkedList {
        linkedList.insertAtTheEnd(210);
        linkedList.deleteFirstNode();
        linkedList.deleteLastNode();
+       int position = linkedList.search(200);
+        System.out.println("Position of 200 is: " + position);
 
        linkedList.print();
     }
