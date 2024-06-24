@@ -57,6 +57,19 @@ public class LinkedList {
             curr = curr.next;
         }
         curr.next = newNode;
+    }
+    public void deleteFirstNode() {
+        Node curr = head;
+        head = curr.next;
+    }
+    public void deleteLastNode() {
+        
+        Node curr = head;
+        while(curr.next.next!= null) {
+            curr = curr.next;
+        }
+        curr.next = null;
+
 
     }
 
@@ -85,6 +98,9 @@ public class LinkedList {
        linkedList.insertAtAnyGivenPosition(1,8);
        linkedList.insertAtTheEnd(200);
        linkedList.insertAtTheEnd(210);
+       linkedList.deleteFirstNode();
+       linkedList.deleteLastNode();
+
        linkedList.print();
     }
 
