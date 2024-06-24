@@ -48,7 +48,15 @@ public class LinkedList {
             curr.next = newNode;
             return head;
 
+    }
 
+    public void insertAtTheEnd(int data) {
+        Node newNode = new Node(data);
+        Node curr = head;
+        while(curr.next != null){
+            curr = curr.next;
+        }
+        curr.next = newNode;
 
     }
 
@@ -75,6 +83,8 @@ public class LinkedList {
         //insert at any position of the list
        linkedList.insertAtAnyGivenPosition(3,9);
        linkedList.insertAtAnyGivenPosition(1,8);
+       linkedList.insertAtTheEnd(200);
+       linkedList.insertAtTheEnd(210);
        linkedList.print();
     }
 
