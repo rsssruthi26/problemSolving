@@ -22,14 +22,43 @@ public class DoubleLL {
         curr.next = newNode;
 
     }
+    public Node reverseLinkedList() {
+        if(head == null || head.next == null)
+            return head;
+        Node prev = null;
+        Node curr = head;
+        while( curr != null) {
+            prev = curr.prev;
+            curr.prev = curr.next;
+            curr.next = prev;
+            curr = curr.prev;
+        }
+        head = prev.prev;
+        return head;
+    }
+    public void deleteHeadNode() {
+        Node curr = head;
+        if(curr.next == null)
+            return;
+        head = curr.next;
+        curr.next.prev = null;
+    }
+    public void deleteLastNode() {
+        Node curr = head;
+        if(curr.next == null)
+            return;
+        while(curr.next.next !=null) {
+            curr = curr.next;
+        }
+        curr.next = null;
+    }
     public void print(){
         Node curr = head;
         while(curr != null) {
-            System.out.println(curr.data + " " );
+            System.out.print(curr.data + " " );
             curr = curr.next;
         }
-
-
+        System.out.println("\n");
     }
     public static void main(String[] args) {
         DoubleLL doubleLL = new DoubleLL();
@@ -39,9 +68,25 @@ public class DoubleLL {
         doubleLL.insertAtBegin(40);
         doubleLL.insertAtEnd(9);
         doubleLL.insertAtEnd(35);
+        System.out.println("Printing the DLL:");
+        doubleLL.print();
+        System.out.println("Reversing the DLL:");
+        Node result = doubleLL.reverseLinkedList();
+        doubleLL.print();
+        System.out.println("Deleting the head node: ");
+        doubleLL.deleteHeadNode();
+        doubleLL.print();
+        System.out.println("Deleting the last node: ");
+        doubleLL.deleteLastNode();
+        doubleLL.deleteLastNode();
         doubleLL.print();
 
 
 
+
+
+
     }
+
+
 }
