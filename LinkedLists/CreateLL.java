@@ -19,7 +19,6 @@ class CreateLL {
         head.next=temp1;
         temp1.next=temp2;
         //System.out.print(head.data+"-->"+temp1.data+"-->"+temp2.data);
-
         //print a Node
         System.out.println("Printing nodes iteratively");
         Node curr = head;
@@ -31,6 +30,8 @@ class CreateLL {
         //recursive display of the linkedList(not using iteration)
         System.out.println("Printing nodes recursively");
         printNodeRecursively(head);
+
+
 
 
     }
