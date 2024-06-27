@@ -82,6 +82,23 @@ public class LinkedList {
             curr = curr.next;
         }return -1;
     }
+    public void middleOfTheLinkedList() {
+        if(head == null)
+            return;
+        int count = 0;
+        Node curr;
+        for(curr = head ; curr !=null ; curr = curr.next) {
+            count++;
+        }
+        curr = head;
+        for(int i = 0 ; i < count/2 ; i++ ) {
+            curr = curr.next;
+        }
+        System.out.println("Middle Element is: " + curr.data);
+
+
+    }
+
 
     //print the list
     public void print() {
@@ -101,9 +118,10 @@ public class LinkedList {
         linkedList.insertFront(20);
         linkedList.insertFront(30);
         linkedList.insertFront(40);
+        linkedList.insertFront(50);
 
 
-        //insert at any position of the list
+      //  insert at any position of the list
        linkedList.insertAtAnyGivenPosition(3,9);
        linkedList.insertAtAnyGivenPosition(1,8);
        linkedList.insertAtTheEnd(200);
@@ -113,7 +131,8 @@ public class LinkedList {
        int position = linkedList.search(200);
         System.out.println("Position of 200 is: " + position);
 
-       linkedList.print();
+      // linkedList.print();
+       linkedList.middleOfTheLinkedList();
     }
 
 }
