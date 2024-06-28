@@ -98,6 +98,17 @@ public class LinkedList {
 
 
     }
+    public void printNthEnd(int n) {
+        int len = 0;
+        for(Node curr=head;curr!=null;curr=curr.next)
+            len++;
+        if(len<n)
+            return;
+        Node curr=head;
+        for(int i=1;i<len-n+1;i++)
+            curr=curr.next;
+        System.out.print(curr.data);
+    }
 
 
     //print the list
@@ -133,6 +144,10 @@ public class LinkedList {
 
       // linkedList.print();
        linkedList.middleOfTheLinkedList();
+
+
+       //printNthFromEnd
+        linkedList.printNthEnd(3);
     }
 
 }
