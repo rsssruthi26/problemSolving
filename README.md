@@ -14,4 +14,18 @@ Problem Solving
 						Traversing from the last node to the head node can be done in constant time
 3. DoubleLinkedLists - This data structure has both the previous and next nodes in the list. It provides 
 						simplicity to traverse, insert and delete the nodes in both directions in a list. 
+
+
+/**************************************************************************************************************************/
+CORE INTERFACES OF the JAVA Collections Framework
+
+1. Collection: This interface represents group of objects known as its elements. It provides basic operations such as adding and removing elements, checking the size or checking if the element is included or not. 
+
+2. List: An ordered collection that can contain duplicate elements. Use cases: when data ordering matters, such as maintaining insertion order or accessing elements by their index positions. ArrayList and LinkedList are widely used implementations. 
+
+3. Set: A collection that cannot contain duplicate values. Use case: primiarily used when uniqueness of the element is a key requirement. 
+
+4. Queue: Designed to hold elements prior to processing. Queues order elements in FIFO manner. LinkedList and PriorityQueue are common implementations, with each serving different uses depending on the required ordering and concurency characteristics. 
+
+5. Map: Unlike other interfaces, maps doesn't extend COLLECTION interface, but is still a part of framework. A map stores key- value pairs, with each key mapping to exactly one key. HashMap and TreeMap are commonly used implementations, offering different sorting and performance characteristics. 
 						
