@@ -28,7 +28,7 @@ CORE INTERFACES OF the JAVA Collections Framework
 4. Queue: Designed to hold elements prior to processing. Queues order elements in FIFO manner. LinkedList and PriorityQueue are common implementations, with each serving different uses depending on the required ordering and concurency characteristics. 
 
 5. Map: Unlike other interfaces, maps doesn't extend COLLECTION interface, but is still a part of framework. A map stores key- value pairs, with each key mapping to exactly one key. HashMap and TreeMap are commonly used implementations, offering different sorting and performance characteristics.
-/******************************************************************************************************************************/
+/******************************************************************************/
 
 ITERATING OVER COLLECTIONS:
 
@@ -38,7 +38,7 @@ ITERATING OVER COLLECTIONS:
 
 3. Java8 forEach-method: (Lambda Expression) forEach method provides a more concise and expressive way to iterate over collections. 
 
-/******************************************************************************************************************************/
+/****************************************************************************/
 
 AVOIDING COMMON PROBLEMS
 
