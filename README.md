@@ -16,8 +16,7 @@ Problem Solving
 						simplicity to traverse, insert and delete the nodes in both directions in a list. 
 
 
-/**************************************************************************************************************************/
-CORE INTERFACES OF the JAVA Collections Framework
+/***************************************************************************/
 
 1. Collection: This interface represents group of objects known as its elements. It provides basic operations such as adding and removing elements, checking the size or checking if the element is included or not. 
 
