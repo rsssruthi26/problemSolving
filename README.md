@@ -8,7 +8,7 @@ Problem Solving
 				 				  	At the end: 0(1) if tail pointer is maintained, otherwise O(n)
 				 				  	In the middle: O(1) if node reference is known, otherwise O(n)
 
-2. CircularLinkedList - The last node points to the first node, completing a full circle of nodes. So, no null 
+2. circularLinkedList - The last node points to the first node, completing a full circle of nodes. So, no null 
 						element at the end.
 						Use cases: Useful in the implementation of the queue data structure. 
 						Traversing from the last node to the head node can be done in constant time
@@ -42,8 +42,15 @@ ITERATING OVER COLLECTIONS:
 AVOIDING COMMON PROBLEMS
 
 1. Using mutable objects as keys in Maps or elements in Sets : 
+Prefer Immutable Objects: Use immutable objects as keys in maps or elements in sets. This ensures that their state cannot change once they are created, avoiding the issues discussed above.
+Immutable Alternatives: If you need to use mutable objects, make sure that the parts of the object that affect equals and hashCode or compareTo methods do not change while the object is being used in a map or set.
+Custom Wrappers: Consider using custom wrapper classes that encapsulate the mutable object and provide consistent equals and hashCode implementations based on the initial state of the object.
 
+2. Ensure consistency with equals and hashCode methods to prevent unexpected behavior, especially if your collection is used in Set or as a key in Map.
 
+3. Implement the Iterable interface to enable the use of enhanced for-loops and other iteration mechanisms.
+
+4. Consider thread safety. If your collection is accessed by multiple threads, ensure it is properly synchronized or use java.util.concurrent utilities.
 
 
 
