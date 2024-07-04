@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class IntersectionPointOfLL {
 
     public static Node getIntersectionNodeNaive(Node head1, Node head2) {
@@ -13,8 +15,22 @@ public class IntersectionPointOfLL {
             head2 = head2.next;
         }
         return null;
+    }
+    private static Node getIntersectionNodeNaiveHashing(Node head1, Node head2) {
 
+        HashSet<Node> hashSet = new HashSet<>();
+        while(head1 != null) {
+            hashSet.add(head1);
+            head1 = head1.next;
+        }
 
+        while(head2 != null) {
+            if(hashSet.contains(head2))
+                return head2;
+            head2 = head2.next;
+        }
+
+        return null;
     }
     public static void main(String[] args) {
 
@@ -39,13 +55,15 @@ public class IntersectionPointOfLL {
         head1.next.next.next = null;
 
         Node intersectionPoint = getIntersectionNodeNaive(head1, head2);
-
-        if (intersectionPoint == null) {
+        Node intersectionPoint2 = getIntersectionNodeNaiveHashing(head1,head2);
+        if (intersectionPoint2 == null) {
             System.out.println(" No Intersection Point \n");
         }
         else {
             System.out.println("Intersection Point: "
-                    + intersectionPoint.data);
+                    + intersectionPoint2.data);
         }
     }
+
+
 }
