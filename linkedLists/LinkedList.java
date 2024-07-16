@@ -52,6 +52,10 @@ public class LinkedList {
 
     public void insertAtTheEnd(int data) {
         Node newNode = new Node(data);
+        if(head == null ) {
+            head = newNode;
+            return;
+        }
         Node curr = head;
         while(curr.next != null){
             curr = curr.next;
@@ -109,12 +113,59 @@ public class LinkedList {
             curr=curr.next;
         System.out.print(curr.data);
     }
+    private static void compareTheLL(LinkedList list1, LinkedList list2) {
+        Node a = list1.head;
+        Node b = list2.head;
+        while (a != null && b != null) {
+            if( a.data != b.data) {
+                System.out.println("LinkedLists are not identical :( ");
+                break;
+            }
+            a = a.next;
+            b = b.next;
+        }
+        if( a == null && b == null)
+            System.out.println("LinkedLists are identical :D ");
+    }
+    private static void sortedMerge(LinkedList list1, LinkedList list2) {
+        Node head1= list1.head;
+        Node head2 = list2.head;
+        Node dummyNode = new Node(0);
+        Node tail = dummyNode;
+
+        while(true) {
+            if(head1 == null) {
+                tail.next = head2 ;
+                break;
+            }
+            if(head2 == null) {
+                tail.next = head1;
+                break;
+            }
+            if(head1.data <= head2.data) {
+                tail.next = head1;
+                head1 = head1.next;
+            }
+            else {
+                tail.next = head2;
+                head2 = head2.next;
+            }
+
+            tail = tail.next;
+        }
+        Node curr = dummyNode.next;
+        while(curr != null ){
+            System.out.println(curr.data);
+            curr = curr.next;
+        }
+    }
+
 
 
     //print the list
     public void print() {
         Node temp = head;
-        while(temp.next != null) {
+        while(temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
@@ -122,6 +173,24 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
+        LinkedList list1 = new LinkedList();
+        LinkedList list2 = new LinkedList();
+        list1.insertAtTheEnd(10);
+        list1.insertAtTheEnd(18);
+        list1.insertAtTheEnd(25);
+        list2.insertAtTheEnd(1);
+        list2.insertAtTheEnd(26);
+        list2.insertAtTheEnd(30);
+
+        //list2.print();
+
+         sortedMerge(list1,list2);
+
+        System.out.println("**********************");
+
+        compareTheLL(list1,list2);
+        System.out.println("**********************");
+
 
 
         //insert elements at the front
@@ -149,5 +218,8 @@ public class LinkedList {
        //printNthFromEnd
         linkedList.printNthEnd(3);
     }
+
+
+
 
 }
