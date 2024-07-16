@@ -52,6 +52,10 @@ public class LinkedList {
 
     public void insertAtTheEnd(int data) {
         Node newNode = new Node(data);
+        if(head == null ) {
+            head = newNode;
+            return;
+        }
         Node curr = head;
         while(curr.next != null){
             curr = curr.next;
@@ -109,6 +113,21 @@ public class LinkedList {
             curr=curr.next;
         System.out.print(curr.data);
     }
+    private static void compareTheLL(LinkedList list1, LinkedList list2) {
+        Node a = list1.head;
+        Node b = list2.head;
+        while (a != null && b != null) {
+            if( a.data != b.data) {
+                System.out.println("LinkedLists are not identical :( ");
+                break;
+            }
+            a = a.next;
+            b = b.next;
+        }
+        if( a == null && b == null)
+            System.out.println("LinkedLists are identical :D ");
+    }
+
 
 
     //print the list
@@ -122,6 +141,18 @@ public class LinkedList {
 
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
+        LinkedList list1 = new LinkedList();
+        LinkedList list2 = new LinkedList();
+        list1.insertAtTheEnd(10);
+        list1.insertAtTheEnd(10);
+        list1.insertAtTheEnd(30);
+        list2.insertAtTheEnd(10);
+        list2.insertAtTheEnd(20);
+        list2.insertAtTheEnd(30);
+
+        compareTheLL(list1,list2);
+        System.out.println("**********************");
+
 
 
         //insert elements at the front
@@ -149,5 +180,6 @@ public class LinkedList {
        //printNthFromEnd
         linkedList.printNthEnd(3);
     }
+
 
 }
