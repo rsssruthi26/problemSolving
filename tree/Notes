@@ -1,0 +1,7 @@
+* Tree stores data in hierarchical structure. Tree data structure is recursive in nature.
+* At top of the hierarchy we have root node.
+* Degree of a tree is the no. of children it has. All the leaf nodes have degree zero. The nodes which are not lead nodes or whose
+  degree is not zero.
+
+----------> Applications of Tree <-----------
+ 1. Whenever you want to store hierarchical data, you can use 
