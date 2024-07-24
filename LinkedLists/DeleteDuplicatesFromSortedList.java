@@ -10,6 +10,7 @@ public class DeleteDuplicatesFromSortedList {
         deleteDuplicatesFromSortedList(linkedList);
         System.out.println("After deletion :");
         linkedList.print();
+
     }
 
     private static void deleteDuplicatesFromSortedList(LinkedListB linkedList) {
